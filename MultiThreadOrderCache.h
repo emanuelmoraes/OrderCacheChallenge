@@ -1,11 +1,11 @@
 #pragma once
 #include "OrderCache.h"
-#include "SimpleCache.h"
+#include "ThreadSafeCache.h"
 
-class LocalOrderCache :	public OrderCacheInterface
+class MultiThreadOrderCache : public OrderCacheInterface
 {
 private:
-	std::shared_ptr<SimpleCache> simpleCache;
+	std::shared_ptr<ThreadSafeCache<int, Order>> threadSafeCache;
 
 public:
 	virtual void addOrder(Order order);
@@ -15,14 +15,14 @@ public:
 	virtual unsigned int getMatchingSizeForSecurity(const std::string& securityId);
 	virtual std::vector<Order> getAllOrders() const;
 
-	LocalOrderCache()
+	MultiThreadOrderCache()
 	{
-		simpleCache = std::make_shared<SimpleCache>(10);
+		threadSafeCache = std::make_shared<ThreadSafeCache<int, Order>>(10);
 	}
 
-	~LocalOrderCache()
+	~MultiThreadOrderCache()
 	{
-		simpleCache == nullptr;
+		threadSafeCache == nullptr;
 	}
 };
 

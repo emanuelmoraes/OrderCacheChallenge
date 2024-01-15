@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include "SimpleCache.h"
-#include "LocalOrderCache.h"
+#include "SimpleOrderCache.h"
 #include "Util.h"
 
 void print_all_orders(std::vector<Order> list)
@@ -24,7 +24,7 @@ void print_empty_line()
 int main()
 {
     std::cout << "Challenge Tradeweb\n";
-	LocalOrderCache localOrderCache;
+	SimpleOrderCache localOrderCache;
 
 	Order order1("59462A1B-6F91-4ABF-B801-FD1CDC93A273", "BDE69D74-777D-4560-A34B-1D2521FBA656", BUY_SIDE, 1, "Emanuel", "Emanuel IT");
 	Order order2("4FCA1F85-BA60-4A06-B395-1EB6DB89F581", "30C06FC6-6E62-414D-BA4A-52F62156180B", SELL_SIDE, 2, "Fulano", "Fulano IT");

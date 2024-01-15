@@ -153,13 +153,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="LocalOrderCache.cpp" />
+    <ClCompile Include="MultiThreadOrderCache.cpp" />
+    <ClCompile Include="SimpleOrderCache.cpp" />
     <ClCompile Include="RunChallengeTradeweb.cpp" />
+    <ClCompile Include="ThreadSafeCache.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="LocalOrderCache.h" />
+    <ClInclude Include="MultiThreadOrderCache.h" />
+    <ClInclude Include="SimpleOrderCache.h" />
     <ClInclude Include="OrderCache.h" />
     <ClInclude Include="SimpleCache.h" />
+    <ClInclude Include="ThreadSafeCache.h" />
     <ClInclude Include="Util.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
